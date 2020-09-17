@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ReqresUserc</string>
+    <string name="update">Update database</string>
+    <string name="delete">Delete user from database</string>
+    <string name="save">Save changes</string>
+
+
+</resources>
