@@ -11,8 +11,8 @@ import kotlinx.android.synthetic.main.for_view_holder.view.*
 import ru.nikanorovsa.reqresuserc.model.UserModel
 
 // Стандартный класс для создания RecyclerView, единственная его особенность в том, что он дополнительно
-//принимает var edit: Double  для обработки данных из editTextNumber макета основной активности и вывода
-// их в RecyclerView
+//принимает var clickListener интерфейса RecyclerOnItemClickListener  для обработки нажатий и вывода
+// выбранного UserModel на отдельный экран с возмонжостью редактирования.
 class Recycler(
     val usersList: MutableList<UserModel>,
     val context: Context,
