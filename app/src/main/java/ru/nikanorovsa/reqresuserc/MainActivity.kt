@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(), RecyclerOnItemClickListener {
         progressBar.visibility = View.GONE
 
         dataBase = AppDatabase.getAppDataBase(context = this)
-        userDao = dataBase?.rateDao()
+        userDao = dataBase?.userDao()
         val observable = userDao?.getAll()
         observable?.observeOn(AndroidSchedulers.mainThread())?.subscribe(object :
             DisposableSubscriber<MutableList<UserModel>>() {
@@ -165,7 +165,6 @@ class MainActivity : AppCompatActivity(), RecyclerOnItemClickListener {
     // Метод интерфейса RecyclerOnItemClickListener в котором отрабатывается нажатие на карточку и запуск
 // активности содержащей в себе фрагмент
     override fun onItemClick(item: UserModel, position: Int) {
-        Log.d("eee", item.id.toString())
 
         val intent = Intent(this, ActivityForFragment::class.java)
         intent.putExtra(KEY, item.id.toString())

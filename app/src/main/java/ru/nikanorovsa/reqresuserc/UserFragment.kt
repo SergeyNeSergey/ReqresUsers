@@ -3,7 +3,6 @@ package ru.nikanorovsa.reqresuserc
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +27,6 @@ class UserFragment : Fragment() {
             val args = Bundle()
             id1 = id
             args.putString("key", id)
-            Log.d("eee", id1 + " in")
 
             val fragment = UserFragment()
             fragment.arguments = args
@@ -52,7 +50,7 @@ class UserFragment : Fragment() {
     ): View? {
         val v = inflater.inflate(R.layout.fragment_layout, container, false)
         dataBase = AppDatabase.getAppDataBase(activity!!.applicationContext)
-        userDao = dataBase?.rateDao()
+        userDao = dataBase?.userDao()
         val observable = userDao!!.findById(id1)
         observable.observeOn(AndroidSchedulers.mainThread()).subscribe(object :
             DisposableSubscriber<UserModel>() {

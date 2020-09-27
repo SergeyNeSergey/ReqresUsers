@@ -10,7 +10,7 @@ import ru.nikanorovsa.reqresuserc.model.UserModel
 // в качестве синглтона.
 @Database(entities = [UserModel::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun rateDao(): UserDao
+    abstract fun userDao(): UserDao
 
     companion object {
         var INSTANCE: AppDatabase? = null
